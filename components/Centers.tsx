@@ -8,10 +8,10 @@ const Centers: React.FC = () => {
       name: "Centum Mains",
       tagline: "Premier Hub for JEE & NEET Excellence",
       image: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800",
-      location: "HSR Layout, Sector 2, Bengaluru",
+      location: "cherpulassery town near plaza theater ,3rd floor",
       phone: "+91 98765 43210",
       email: "mains@centumeducation.in",
-      facilities: ["Smart Classrooms", "Digital Library", "Doubt Clearing Hub", "AI Testing Lab"],
+      facilities: ["Smart Classrooms", " Library", "Doubt Clearing sections", "tec support"],
       isResidential: false,
       description: "Our flagship urban center equipped with state-of-the-art digital infrastructure and the most experienced faculty pool for day-scholars.",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Centum+Education+HSR+Layout+Sector+2+Bengaluru"
@@ -19,14 +19,14 @@ const Centers: React.FC = () => {
     {
       id: 'c2',
       name: "Acharya Campus",
-      tagline: "Residential Excellence & Holistic Growth",
+      tagline: "Excellence & Holistic Growth",
       image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800",
-      location: "Electronic City Phase II, Bengaluru",
+      location: "Near cherpulassery kavu ,HP pumbs opposite ,3rd floor",
       phone: "+91 98765 00112",
       email: "acharya@centumeducation.in",
-      facilities: ["Premium Hostels", "Gym & Sports", "24/7 Mentors", "Organic Mess"],
-      isResidential: true,
-      description: "A serene, sprawling residential campus designed to provide 24/7 academic immersion away from city distractions.",
+      facilities: ["Premium class", "student support org", "24/7 Mentors", "Organic contents"],
+      isResidential: false,
+      description: "A serene, campus designed to provide 24/7 academic immersion away from  distractions.",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Centum+Education+Electronic+City+Phase+II+Bengaluru"
     }
   ];
