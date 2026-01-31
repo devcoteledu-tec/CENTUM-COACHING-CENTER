@@ -9,23 +9,23 @@ const FreeClasses: React.FC = () => {
       views: "12.4K", 
       duration: "45:20", 
       thumb: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=400",
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      videoUrl: "https://www.youtube.com/live/JAvi2K_DbbI?si=juFjGMjBvThn89-g"
     },
     { 
       title: "Organic Chemistry: Key SN1/SN2 Strategies", 
       subject: "Chemistry", 
       views: "8.2K", 
       duration: "32:15", 
-      thumb: "https://images.unsplash.com/photo-1532187875605-7fe3b25198bf?auto=format&fit=crop&q=80&w=400",
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      thumb: "https://www.pathwayz.org/Node/Image/url/aHR0cHM6Ly9pLmltZ3VyLmNvbS9Rd0VNUXViLmpwZw==",
+      videoUrl: "https://www.youtube.com/live/JaCEgk9GNgk?si=qtuUxX1Bha0_qJrN"
     },
     { 
       title: "Calculus Foundation: Limits & Continuity", 
       subject: "Mathematics", 
       views: "15.1K", 
       duration: "58:40", 
-      thumb: "https://images.unsplash.com/photo-1509228468518-180dd482195e?auto=format&fit=crop&q=80&w=400",
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      thumb: "https://img.clickviewapp.com/v1/thumbnails/7035954?size=medium",
+      videoUrl: "https://www.youtube.com/live/81v0t4OG6Wc?si=ShS9wO0tuv7qqPB_"
     },
   ];
 
