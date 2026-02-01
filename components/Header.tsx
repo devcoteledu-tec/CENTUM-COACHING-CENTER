@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
     { id: 'blogs', label: 'Blogs' },
     { id: 'news', label: 'News' },
     { id: 'results', label: 'Results' },
-    { id: 'carrier', label: 'Carrier' },
+    { id: 'carrier', label: 'Careers' },
   ];
 
   const academicDropdown = {
