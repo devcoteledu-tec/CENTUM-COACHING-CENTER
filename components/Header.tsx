@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         <div className="ticker-text text-[10px] font-bold uppercase tracking-[0.2em]">
           <span className="mx-12"><i className="fas fa-fire-flame-curved mr-2"></i> Admissions Open for JEE & NEET 2025-26 Academic Year</span>
           <span className="mx-12"><i className="fas fa-trophy mr-2"></i> Centum Scholarship Test (CST) Registration Now Active</span>
-          <span className="mx-12"><i className="fas fa-bullhorn mr-2"></i> Congratulations to our 2024 Top Rankers in JEE Advanced</span>
+          <span className="mx-12"><i className="fas fa-bullhorn mr-2"></i> Congratulations to our 2025 Top Rankers in JEE Advanced</span>
         </div>
       </div>
 
@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           <div className="flex items-center gap-8">
             <span className="flex items-center gap-2">
               <i className="fas fa-phone-alt text-red-800"></i>
-              +91 98765 43210
+              +91 7593038781
             </span>
             <span className="flex items-center gap-2">
               <i className="fas fa-envelope text-red-800"></i>
