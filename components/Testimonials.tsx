@@ -46,15 +46,15 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onNavigate }) => {
 
   const stories = [
     {
-      name: "Abhishek Sharma",
+      name: "Ajesh",
       rank: "AIR 45 - UPSC CSE (IAS)",
       quote: "The analytical foundation I built at Centum during my early years stayed with me. Their focus on logic and conceptual clarity is what sets them apart in competitive coaching.",
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+      img: "https://img1.wsimg.com/isteam/ip/8146ca66-1e3f-445d-b78d-795d3d7c852c/Ajesh%20A%20photo.jpeg/:/cr=t:4.01%25,l:0%25,w:100%25,h:77.78%25/rs=w:365,h:365,cg:true/:/cr=t:4.01%25,l:0%25,w:100%25,h:77.78%25/rs=w:365,h:365,cg:true",
       type: "IAS",
-      year: "2023"
+      year: "2015"
     },
     {
-      name: "Aryan Mehra",
+      name: "Arya",
       rank: "AIR 12 - JEE Advanced",
       quote: "The personalized focus and doubt-clearing sessions at Centum made all the difference in my preparation journey. The faculty provided constant support and guidance.",
       img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400",
