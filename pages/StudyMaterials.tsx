@@ -21,6 +21,10 @@ const StudyMaterials: React.FC = () => {
   const [activeExam, setActiveExam] = useState('All');
   const [activeSubject, setActiveSubject] = useState('All');
 
+  // Request Section State
+  const [requestTopic, setRequestTopic] = useState('');
+  const [requestUserName, setRequestUserName] = useState('');
+
   // Supabase Configuration
   const SUPABASE_URL = 'https://xhmisvxohwofpzxkizpi.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_n7cCpkRy1wBo95YQHwQykw_gxA98bNd';
@@ -48,6 +52,21 @@ const StudyMaterials: React.FC = () => {
 
     fetchMaterials();
   }, []);
+
+  const handleRequestSubmit = () => {
+    if (!requestTopic.trim() || !requestUserName.trim()) {
+      alert("Please enter both your name and the topic details.");
+      return;
+    }
+
+    const email = "krishnadevthekeettil@gmail.com";
+    const subject = encodeURIComponent(`Study Material Request: ${requestTopic}`);
+    const body = encodeURIComponent(
+      `Hello Centum Team,\n\nI am ${requestUserName}. I would like to request study materials for the following topic:\n\nTopic/Chapter: ${requestTopic}\n\nPlease let me know once this resource is uploaded to the portal.\n\nThank you!`
+    );
+
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  };
 
   const filteredMaterials = materials.filter(m => {
     const matchesSearch = m.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -212,13 +231,27 @@ const StudyMaterials: React.FC = () => {
            <p className="text-slate-400 font-medium text-lg leading-relaxed">
              Request specific notes, chapter-wise questions, or mock tests. Our academic team will upload them for you within 24 hours.
            </p>
-           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <input 
-                type="text" 
-                placeholder="Name of Topic / Chapter" 
-                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-red-800 text-white placeholder:text-slate-500 transition-all"
-              />
-              <button className="bg-red-800 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-slate-950 transition-all shadow-xl active:scale-95 whitespace-nowrap">
+           <div className="flex flex-col gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  value={requestUserName}
+                  onChange={(e) => setRequestUserName(e.target.value)}
+                  className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-red-800 text-white placeholder:text-slate-500 transition-all"
+                />
+                <input 
+                  type="text" 
+                  placeholder="Name of Topic / Chapter" 
+                  value={requestTopic}
+                  onChange={(e) => setRequestTopic(e.target.value)}
+                  className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-red-800 text-white placeholder:text-slate-500 transition-all"
+                />
+              </div>
+              <button 
+                onClick={handleRequestSubmit}
+                className="w-full bg-red-800 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-slate-950 transition-all shadow-xl active:scale-95 whitespace-nowrap"
+              >
                 Request Material
               </button>
            </div>
