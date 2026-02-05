@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
     label: 'Admission',
     items: [
       { label: 'Scholarship Test (CST)', link: '/admission/scholarship' },
-      { label: 'Online Registration', link: '/admission/register' },
+      { label: 'Online Registration', link: 'https://krishnadev-devco.github.io/form-test/' },
       { label: 'Fee Structure', link: '/admission/fees' },
       { label: 'Application Process', link: '/admission/process' }
     ]
