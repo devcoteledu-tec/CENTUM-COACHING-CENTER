@@ -61,9 +61,9 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
       {/* 1. News Ticker */}
       <div className="ticker-wrapper relative z-[110] border-b border-white/10 hidden md:block">
         <div className="ticker-text text-[10px] font-bold uppercase tracking-[0.2em]">
-          <span className="mx-12"><i className="fas fa-fire-flame-curved mr-2"></i> Admissions Open for JEE & NEET 2025-26 Academic Year</span>
+          <span className="mx-12"><i className="fas fa-fire-flame-curved mr-2"></i> Admissions Open for  2025-26 Academic Year</span>
           <span className="mx-12"><i className="fas fa-trophy mr-2"></i> Centum Scholarship Test (CST) Registration Now Active</span>
-          <span className="mx-12"><i className="fas fa-bullhorn mr-2"></i> Congratulations to our 2025 Top Rankers in JEE Advanced</span>
+          <span className="mx-12"><i className="fas fa-bullhorn mr-2"></i> Congratulations to our 2025 Top Rankers </span>
         </div>
       </div>
 
