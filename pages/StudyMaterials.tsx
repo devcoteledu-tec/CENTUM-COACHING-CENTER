@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { supabaseFetch } from '../services/supabase';
 
 interface Material {
   id: string;
@@ -25,24 +26,12 @@ const StudyMaterials: React.FC = () => {
   const [requestTopic, setRequestTopic] = useState('');
   const [requestUserName, setRequestUserName] = useState('');
 
-  // Supabase Configuration
-  const SUPABASE_URL = 'https://xhmisvxohwofpzxkizpi.supabase.co';
-  const SUPABASE_KEY = 'sb_publishable_n7cCpkRy1wBo95YQHwQykw_gxA98bNd';
-
   useEffect(() => {
     const fetchMaterials = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/centum_study_materials?select=*&order=created_at.desc`, {
-          headers: {
-            'apikey': SUPABASE_KEY,
-            'Authorization': `Bearer ${SUPABASE_KEY}`
-          }
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setMaterials(data);
-        }
+        const data = await supabaseFetch<Material>('centum_study_materials?select=*&order=created_at.desc');
+        if (data) setMaterials(data);
       } catch (error) {
         console.error("Error fetching study materials:", error);
       } finally {
