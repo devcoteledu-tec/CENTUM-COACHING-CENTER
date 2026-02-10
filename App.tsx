@@ -9,7 +9,9 @@ import Results from './components/Results';
 import Carrier from './components/Carrier';
 import Centers from './components/Centers';
 import AboutUs from './components/AboutUs';
-import Sidebar from './components/Sidebar';
+import ContactUs from './components/ContactUs';
+import UsefulLinks from './components/UsefulLinks';
+import OnlineAdmission from './components/OnlineAdmission';
 import Announcements from './pages/Announcements';
 import StudyMaterials from './pages/StudyMaterials';
 
@@ -25,12 +27,7 @@ const App: React.FC = () => {
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       
       <div className="flex flex-1 max-w-[1600px] mx-auto w-full relative">
-        {/* Left Sidebar Navigation - Hidden on Home Page and smaller screens */}
-        {activeTab !== 'home' && (
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-        )}
-        
-        <main className={`flex-1 min-w-0 bg-slate-50/30 ${activeTab !== 'home' ? 'lg:border-l border-slate-100' : ''}`}>
+        <main className="flex-1 min-w-0 bg-slate-50/30">
           <div className={`px-4 sm:px-8 lg:px-16 ${activeTab === 'home' ? 'pt-0 pb-6 sm:pb-10' : 'py-6 sm:py-10'}`}>
             {/* Application Routing */}
             <div className="min-h-[60vh] sm:min-h-[70vh]">
@@ -44,6 +41,10 @@ const App: React.FC = () => {
                 <News />
               ) : activeTab === 'results' ? (
                 <Results />
+              ) : activeTab === 'useful-links' ? (
+                <UsefulLinks />
+              ) : activeTab === 'online-admission' ? (
+                <OnlineAdmission />
               ) : activeTab === 'carrier' ? (
                 <Carrier />
               ) : activeTab === 'centers' ? (
@@ -52,6 +53,8 @@ const App: React.FC = () => {
                 <Announcements />
               ) : activeTab === 'study-materials' ? (
                 <StudyMaterials />
+              ) : activeTab === 'contact-us' ? (
+                <ContactUs />
               ) : (
                 <div className="flex flex-col items-center justify-center py-20 text-center animate-in zoom-in-95">
                   <div className="w-20 h-20 bg-red-50 rounded-3xl flex items-center justify-center mb-6">
@@ -68,7 +71,7 @@ const App: React.FC = () => {
         </main>
       </div>
 
-      {/* Quick Action FABs - Responsive sizing */}
+      {/* Quick Action FABs */}
       <div className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[110] flex flex-col gap-3 sm:gap-4">
         <a 
           href="https://wa.me/917593038781" 
