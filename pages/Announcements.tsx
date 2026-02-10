@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { supabaseFetch } from '../services/supabase';
 
 interface AnnouncementItem {
   id: number;
@@ -15,22 +16,11 @@ const Announcements: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const SUPABASE_URL = 'https://xhmisvxohwofpzxkizpi.supabase.co';
-  const SUPABASE_KEY = 'sb_publishable_n7cCpkRy1wBo95YQHwQykw_gxA98bNd';
-
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/centum_announcements?select=*&order=priority.desc,created_at.desc`, {
-          headers: {
-            'apikey': SUPABASE_KEY,
-            'Authorization': `Bearer ${SUPABASE_KEY}`
-          }
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setAnnouncements(data);
-        }
+        const data = await supabaseFetch<AnnouncementItem>('centum_announcements?select=*&order=priority.desc,created_at.desc');
+        if (data) setAnnouncements(data);
       } catch (error) {
         console.error("Error fetching announcements:", error);
       } finally {
