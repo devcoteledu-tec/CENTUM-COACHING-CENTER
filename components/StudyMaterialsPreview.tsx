@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { supabaseFetch } from '../services/supabase';
 
 interface Material {
   id: string;
@@ -17,9 +18,6 @@ interface StudyMaterialsPreviewProps {
 const StudyMaterialsPreview: React.FC<StudyMaterialsPreviewProps> = ({ onNavigate }) => {
   const [materials, setMaterials] = useState<Material[]>([]);
   const [loading, setLoading] = useState(true);
-
-  const SUPABASE_URL = 'https://xhmisvxohwofpzxkizpi.supabase.co';
-  const SUPABASE_KEY = 'sb_publishable_n7cCpkRy1wBo95YQHwQykw_gxA98bNd';
   
   // The URL for the Centum Student Portal
   const loginUrl = "https://img.freepik.com/free-vector/login-template_1017-6719.jpg";
@@ -27,16 +25,8 @@ const StudyMaterialsPreview: React.FC<StudyMaterialsPreviewProps> = ({ onNavigat
   useEffect(() => {
     const fetchRecentMaterials = async () => {
       try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/centum_study_materials?select=id,title,subject,category,url,is_new&order=created_at.desc&limit=4`, {
-          headers: {
-            'apikey': SUPABASE_KEY,
-            'Authorization': `Bearer ${SUPABASE_KEY}`
-          }
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setMaterials(data);
-        }
+        const data = await supabaseFetch<Material>('centum_study_materials?select=id,title,subject,category,url,is_new&order=created_at.desc&limit=4');
+        if (data) setMaterials(data);
       } catch (error) {
         console.error("Error fetching preview materials:", error);
       } finally {
